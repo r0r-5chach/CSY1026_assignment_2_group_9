@@ -85,4 +85,4 @@ CREATE TABLE game_participants (
     game_participant_id NUMBER(16),
     game_id NUMBER(8),
     tournament_participant_id NUMBER(8)
-)
+);
