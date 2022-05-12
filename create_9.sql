@@ -1,8 +1,8 @@
 CREATE TABLE players (
     player_id NUMBER(4),
-    player_name VARCHAR2(15),
-    contact_email VARCHAR2(25),
-    contact_number CHAR(13)
+    player_name VARCHAR2(15) NOT NULL,
+    contact_email VARCHAR2(25) NOT NULL UNIQUE,
+    contact_number CHAR(13) NOT NULL UNIQUE
 );
 
 CREATE TABLE teams (
