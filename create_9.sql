@@ -3,11 +3,7 @@ CREATE TABLE players (
     player_name VARCHAR2(15),
     contact_email VARCHAR2(25),
     contact_number CHAR(13)
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> 3d5803ccf80e7a46ce8acc07ecaa3a5205add4a6
 
 CREATE TABLE teams (
     team_id NUMBER(4),
