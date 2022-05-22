@@ -105,24 +105,24 @@ UNIQUE (genre_name);
 -- alter foreign keys
 
 ALTER TABLE team_players
-ADD CONSTRAINT fk_team_players_players
-FOREIGN KEY player_id
+ADD CONSTRAINT fk_team_players(player_id)
+FOREIGN KEY (player_id)
 REFERENCES players(player_id)
-ADD CONSTRAINT fk_team_players_teams
-FOREIGN KEY team_id
+ADD CONSTRAINT fk_team_players(team_id)
+FOREIGN KEY (team_id)
 REFERENCES teams(team_id);
 
 ALTER TABLE tournaments
-ADD CONSTRAINT fk_t_categories
-FOREIGN KEY genre_id
+ADD CONSTRAINT fk_tournaments(genre_id)
+FOREIGN KEY (genre_id)
 REFERENCES categories(genre_id);
 
 ALTER TABLE tournament_participants
-ADD CONSTRAINT fk_tp_tournaments
-FOREIGN KEY tournament_id
+ADD CONSTRAINT fk_tournament_participants(tournament_id)
+FOREIGN KEY (tournament_id)
 REFERENCES tournaments(tournament_id)
-ADD CONSTRAINT fk_tp_players
-FOREIGN KEY player_id
+ADD CONSTRAINT fk_tournament_participants(player_id)
+FOREIGN KEY (player_id)
 REFERENCES players(player_id)
 ADD CONSTRAINT fk_tp_teams
 FOREIGN KEY team_id
