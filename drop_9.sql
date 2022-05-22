@@ -36,7 +36,7 @@ DROP CONSTRAINT ck_player_name;
 --foreign key 
 
 ALTER TABLE game_participants
-DROP CONSTRAINT fk_games;
+DROP CONSTRAINT fk_games
 DROP CONSTRAINT fk_tournament_participants;
 
 ALTER TABLE statistics 
