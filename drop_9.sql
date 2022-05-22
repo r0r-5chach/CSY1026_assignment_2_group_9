@@ -36,8 +36,8 @@ DROP CONSTRAINT ck_player_name;
 --foreign key 
 
 ALTER TABLE game_participants
-DROP CONSTRAINT game_id
-DROP CONSTRAINT tournament_participants;
+DROP CONSTRAINT fk_games
+DROP CONSTRAINT fk_tournament_participants;
 
 ALTER TABLE statistics 
 DROP CONSTRAINT fk_statistics;
@@ -46,20 +46,20 @@ ALTER TABLE games
 DROP CONSTRAINT fk_games;
 
 ALTER TABLE prizes 
-DROP CONSTRAINT tournament_id
-DROP CONSTRAINT sponsor_id;
+DROP CONSTRAINT fk_tournaments
+DROP CONSTRAINT fk_sponsors;
 
 ALTER TABLE tournament_participants
-DROP CONSTRAINT team_id
-DROP CONSTRAINT player_id
-DROP CONSTRAINT tournament_id;
+DROP CONSTRAINT fk_teams
+DROP CONSTRAINT fk_players
+DROP CONSTRAINT fk_tournaments;
 
 ALTER TABLE tournaments
-DROP CONSTRAINT genre_id;
+DROP CONSTRAINT fk_genres;
 
 ALTER TABLE team_players
-DROP CONSTRAINT team_id
-DROP CONSTRAINT player_id
+DROP CONSTRAINT fk_teams
+DROP CONSTRAINT fk_players;
 
 
 --unique
@@ -70,42 +70,40 @@ ALTER TABLE players
 DROP UNIQUE(contact_email)
 DROP UNIQUE(contact_number);
 
---CONSTRAINT
+--PRIMARYKEY
 ALTER TABLE game_participants
-DROP CONSTRAINT game_participant_id;
+DROP CONSTRAINT pk_game_participant;
 
 ALTER TABLE statistics
-DROP CONSTRAINT game_result_id;
+DROP CONSTRAINT pk_game_result;
 
-ALTER TABLE games 
-DROP TABLE game_id;
 
 ALTER TABLE rounds 
-DROP CONSTRAINT round_id;
+DROP CONSTRAINT pk_round;
 
 ALTER TABLE prizes
-DROP CONSTRAINT prize_id;
+DROP CONSTRAINT pk_prize;
 
 ALTER TABLE sponsors
-DROP CONSTRAINT sponsor_id;
+DROP CONSTRAINT pk_sponsor;
 
 ALTER TABLE tournament_participants
-DROP CONSTRAINT tournament_participant_id;
+DROP CONSTRAINT pk_tournament_participant;
 
 ALTER TABLE tournaments
-DROP CONSTRAINT tournament_id;
+DROP CONSTRAINT pk_tournament;
 
 ALTER TABLE categories 
-DROP CONSTRAINT genre_id;
+DROP CONSTRAINT pk_genre;
 
 ALTER TABLE team_players
-DROP CONSTRAINT team_player_id;
+DROP CONSTRAINT pk_team_player;
 
 ALTER TABLE teams
-DROP CONSTRAINT team_id;
+DROP CONSTRAINT pk_team;
 
 ALTER TABLE players
-DROP CONSTRAINT player_id;
+DROP CONSTRAINT pk_player;
 
 --Sequence 
 
@@ -149,38 +147,36 @@ DROP SEQUENCE seq_players;
 
 -- Tables 
 
-ALTER TABLE game_participants
+
 DROP TABLE game_participants PURGE;
 
-ALTER TABLE statistics
+
 DROP TABLE statistics PURGE; 
 
-ALTER TABLE games
+
 DROP TABLE games PURGE;
 
-ALTER TABLE rounds
+
 DROP TABLE rounds PURGE;
 
-ALTER TABLE prizes
 DROP TABLE prizes PURGE;
 
-ALTER TABLE sponsors
+
 DROP TABLE sponsors PURGE;
 
-ALTER TABLE tournament_participants
+
 DROP TABLE tournament_participants PURGE;
 
-ALTER TABLE tournaments
+
 DROP TABLE tournaments PURGE;
 
-ALTER TABLE categories
 DROP TABLE categories PURGE;
 
-ALTER TABLE team_players
+
 DROP TABLE team_players PURGE;
 
-ALTER TABLE teams
+
 DROP TABLE teams PURGE;
 
-ALTER TABLE players
+
 DROP TABLE players PURGE;
