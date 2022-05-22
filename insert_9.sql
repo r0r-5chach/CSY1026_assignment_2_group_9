@@ -29,7 +29,7 @@ VALUES (seq_categories.NEXTVAL, 'SIMULATION', 'BASED ON REAL LIFE ACTIVITIES',''
 VALUES (seq_categories.NEXTVAL, 'SURVIVAL', 'ROUND BASED SURVIVAL GAME', '');
 
 INSERT INTO tournaments (tournament_id, tournament_name, tournament_start_date, tournament_end_date, tournament_city, tournament_country, tournament_arena, genre_id)
-VALUES (seq_tournaments.NEXTVAL, 'ANNUAL CUP 1', '01-JAN-2023', '01-FEB-2023', 'PARIS', 'FRANCE', 'O6 ARENA', 5451),
+VALUES (seq_tournaments.NEXTVAL, 'ANNUAL CUP 1', '01-JAN-2023', '01-FEB-2023', 'PARIS', 'FRANCE', 'O6 ARENA', 5451);
 VALUES (seq_tournaments.NEXTVAL, 'ANNUAL CUP 2', '02-JAN-2023', '02-FEB-2023', 'MANCHESTER', 'ENGLAND', 'O5 ARENA', 5452);
 VALUES (seq_tournaments.NEXTVAL, 'ANNUAL CUP 3', '03-JAN-2023', '03-FEB-2023', 'LIVERPOOL', 'ENGLAND', 'O4 ARENA', 5453);
 VALUES (seq_tournaments.NEXTVAL, 'ANNUAL CUP 4', '04-JAN-2023', '04-FEB-2023', 'BIRMINGHAM', 'ENGLAND', 'O3 ARENA', 5454);
