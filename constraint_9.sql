@@ -124,34 +124,34 @@ REFERENCES tournaments(tournament_id)
 ADD CONSTRAINT fk_tournament_participants(player_id)
 FOREIGN KEY (player_id)
 REFERENCES players(player_id)
-ADD CONSTRAINT fk_tp_teams
-FOREIGN KEY team_id
+ADD CONSTRAINT fk_tournament_participants(team_id)
+FOREIGN KEY (team_id)
 REFERENCES teams(team_id);
 
 ALTER TABLE prizes
-ADD CONSTRAINT fk_p_sponsors
-FOREIGN KEY sponsor_id
+ADD CONSTRAINT fk_prizes(sponsor_id)
+FOREIGN KEY (sponsor_id)
 REFERENCES sponsors(sponsor_id)
-ADD CONSTRAINT fk_p_tournaments
-FOREIGN KEY tournament_id
+ADD CONSTRAINT fk_prizes(tournament_id)
+FOREIGN KEY (tournament_id)
 REFERENCES tournaments(tournament_id);
 
 ALTER TABLE games
-ADD CONSTRAINT fk_g_rounds
-FOREIGN KEY round_id
+ADD CONSTRAINT fk_games(round_id)
+FOREIGN KEY (round_id)
 REFERENCES rounds(round_id);
 
 ALTER TABLE statistics
-ADD CONSTRAINT fk_s_games
-FOREIGN KEY game_id
+ADD CONSTRAINT fk_statistics(game_id)
+FOREIGN KEY (game_id)
 REFERENCES games(game_id);
 
 ALTER TABLE game_participants
-ADD CONSTRAINT fk_gp_games
-FOREIGN KEY game_id
+ADD CONSTRAINT fk_game_participants(game_id)
+FOREIGN KEY (game_id)
 REFERENCES games(game_id)
-ADD CONSTRAINT fk_gp_tournament_participants
-FOREIGN KEY tournament_participant_id
+ADD CONSTRAINT fk_game_participants(tournament_participant_id)
+FOREIGN KEY (tournament_participant_id)
 REFERENCES tournament_participants(tournament_participant_id);
 
 -- CHECK
@@ -178,7 +178,7 @@ ALTER TABLE tournaments
 ADD CONSTRAINT ck_tournament_city
 CHECK (tournament_city = UPPER(tournament_city))
 ADD CONSTRAINT ck_tournament_country
-CHECK (tournament_country = UPPER(tournament_country_))
+CHECK (tournament_country = UPPER(tournament_country))
 ADD CONSTRAINT ck_tournament_arena
 CHECK (tournament_arena = UPPER(tournament_arena));
 
