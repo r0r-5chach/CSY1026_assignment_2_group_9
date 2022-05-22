@@ -105,52 +105,52 @@ UNIQUE (genre_name);
 -- alter foreign keys
 
 ALTER TABLE team_players
-ADD CONSTRAINT fk_team_players(player_id)
+ADD CONSTRAINT fk_tp_players
 FOREIGN KEY player_id
 REFERENCES players(player_id)
-ADD CONSTRAINT fk_team_players(team_id)
+ADD CONSTRAINT fk_tp_teams
 FOREIGN KEY team_id
 REFERENCES teams(team_id);
 
 ALTER TABLE tournaments
-ADD CONSTRAINT fk_tournaments(genre_id)
+ADD CONSTRAINT fk_t_categories
 FOREIGN KEY genre_id
 REFERENCES categories(genre_id);
 
 ALTER TABLE tournament_participants
-ADD CONSTRAINT fk_tournament_participants(tournament_id)
+ADD CONSTRAINT fk_tp_tournaments
 FOREIGN KEY tournament_id
 REFERENCES tournaments(tournament_id)
-ADD CONSTRAINT fk_tournament_participants(player_id)
+ADD CONSTRAINT fk_tp_players
 FOREIGN KEY player_id
 REFERENCES players(player_id)
-ADD CONSTRAINT fk_tournament_participants(team_id)
+ADD CONSTRAINT fk_tp_teams
 FOREIGN KEY team_id
 REFERENCES teams(team_id);
 
 ALTER TABLE prizes
-ADD CONSTRAINT fk_prizes(sponsor_id)
+ADD CONSTRAINT fk_p_sponsors
 FOREIGN KEY sponsor_id
 REFERENCES sponsors(sponsor_id)
-ADD CONSTRAINT fk_prizes(tournament_id)
+ADD CONSTRAINT fk_p_tournaments
 FOREIGN KEY tournament_id
 REFERENCES tournaments(tournament_id);
 
 ALTER TABLE games
-ADD CONSTRAINT fk_games(round_id)
+ADD CONSTRAINT fk_g_rounds
 FOREIGN KEY round_id
 REFERENCES rounds(round_id);
 
 ALTER TABLE statistics
-ADD CONSTRAINT fk_statistics(game_id)
+ADD CONSTRAINT fk_s_games
 FOREIGN KEY game_id
 REFERENCES games(game_id);
 
 ALTER TABLE game_participants
-ADD CONSTRAINT fk_game_participants(game_id)
+ADD CONSTRAINT fk_gp_games
 FOREIGN KEY game_id
 REFERENCES games(game_id)
-ADD CONSTRAINT fk_game_participants(tournament_participant_id)
+ADD CONSTRAINT fk_gp_tournament_participants
 FOREIGN KEY tournament_participant_id
 REFERENCES tournament_participants(tournament_participant_id);
 
