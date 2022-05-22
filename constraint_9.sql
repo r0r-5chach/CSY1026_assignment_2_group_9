@@ -17,7 +17,7 @@ MODIFY (genre_name NOT NULL);
 ALTER TABLE tournaments
 MODIFY (tournament_name NOT NULL)
 MODIFY (tournament_start_date NOT NULL)
-MODIFY (tournament_end_date NOT NULL;
+MODIFY (tournament_end_date NOT NULL);
 
 ALTER TABLE sponsors
 MODIFY (sponsor_name NOT NULL)
@@ -194,7 +194,7 @@ CHECK (achievement_name = UPPER(achievement_name));
 
 ALTER TABLE rounds
 ADD CONSTRAINT ck_round_name
-CHECK (round_name = UPPER(round_name));]
+CHECK (round_name = UPPER(round_name));
 
 ALTER TABLE games
 ADD CONSTRAINT ck_game_name

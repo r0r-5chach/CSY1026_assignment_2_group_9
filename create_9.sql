@@ -87,7 +87,7 @@ NOCYCLE;
 
 CREATE TABLE sponsors (
     sponsor_id NUMBER(4),
-    sponsor_name VARCHAR2(15) DEFAULT "anonymous",
+    sponsor_name VARCHAR2(15) DEFAULT 'anonymous',
     sponsor_type VARCHAR2(15),
     sponsor_start_date DATE DEFAULT SYSDATE,
     sponsor_end_date DATE
@@ -105,7 +105,7 @@ CREATE TABLE prizes (
     sponsor_id NUMBER(4),
     tournament_id NUMBER(4),
     prize_amount NUMBER(10),
-    achievement_name VARCHAR2(15) DEFAULT "winner"
+    achievement_name VARCHAR2(15) DEFAULT 'winner'
 );
 
 CREATE SEQUENCE seq_prizes
