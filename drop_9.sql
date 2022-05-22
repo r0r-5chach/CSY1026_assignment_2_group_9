@@ -9,8 +9,6 @@ DROP CONSTRAINT ck_game_name;
 ALTER TABLE rounds
 DROP CONSTRAINT ck_achievement_name;
 
-ALTER TABLE prizes
-DROP CONSTRAINT ck_achievement_name;
 
 ALTER TABLE sponsors
 DROP CONSTRAINT ck_sponsor_type
@@ -36,8 +34,7 @@ DROP CONSTRAINT ck_player_name;
 --foreign key 
 
 ALTER TABLE game_participants
-DROP CONSTRAINT fk_gp_games
-DROP CONSTRAINT fk_gp_tournament_participants;
+DROP CONSTRAINT fk_gp_games;
 
 ALTER TABLE statistics 
 DROP CONSTRAINT fk_s_games;
@@ -131,7 +128,7 @@ DROP SEQUENCE seq_sponsors;
 DROP SEQUENCE seq_tournament_participants;
 
 
-DROP SEQUENCE seq_tournament;
+DROP SEQUENCE seq_tournaments;
 
 
 DROP SEQUENCE seq_categories;
