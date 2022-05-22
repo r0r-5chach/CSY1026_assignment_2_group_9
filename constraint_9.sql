@@ -105,10 +105,10 @@ UNIQUE (genre_name);
 -- alter foreign keys
 
 ALTER TABLE team_players
-ADD CONSTRAINT fk_tp_players
+ADD CONSTRAINT fk_team_players_players
 FOREIGN KEY player_id
 REFERENCES players(player_id)
-ADD CONSTRAINT fk_tp_teams
+ADD CONSTRAINT fk_team_players_teams
 FOREIGN KEY team_id
 REFERENCES teams(team_id);
 
