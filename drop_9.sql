@@ -36,30 +36,30 @@ DROP CONSTRAINT ck_player_name;
 --foreign key 
 
 ALTER TABLE game_participants
-DROP CONSTRAINT fk_games
-DROP CONSTRAINT fk_tournament_participants;
+DROP CONSTRAINT fk_gp_games
+DROP CONSTRAINT fk_gp_tournament_participants;
 
 ALTER TABLE statistics 
-DROP CONSTRAINT fk_statistics;
+DROP CONSTRAINT fk_s_games;
 
 ALTER TABLE games
-DROP CONSTRAINT fk_games;
+DROP CONSTRAINT fk_g_rounds;
 
 ALTER TABLE prizes 
-DROP CONSTRAINT fk_tournaments
-DROP CONSTRAINT fk_sponsors;
+DROP CONSTRAINT fk_p_sponsors
+DROP CONSTRAINT fk_p_tournaments;
 
 ALTER TABLE tournament_participants
-DROP CONSTRAINT fk_teams
-DROP CONSTRAINT fk_players
-DROP CONSTRAINT fk_tournaments;
+DROP CONSTRAINT fk_tp_tournaments
+DROP CONSTRAINT fk_tp_players
+DROP CONSTRAINT fk_tp_teams;
 
 ALTER TABLE tournaments
-DROP CONSTRAINT fk_genres;
+DROP CONSTRAINT fk_t_categories;
 
 ALTER TABLE team_players
-DROP CONSTRAINT fk_teams
-DROP CONSTRAINT fk_players;
+DROP CONSTRAINT fk_team_players_olayers
+DROP CONSTRAINT fk_team_players_teams;
 
 
 --unique
